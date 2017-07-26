@@ -13,3 +13,5 @@ RUN \
   && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
+
+ENTRYPOINT [ "RetroShare06-nogui", "--stderr", "--ip-address", "0.0.0.0" ]
