@@ -9,9 +9,9 @@ RUN \
 RUN \
   apt-get update && \
   DEBIAN_FRONTEND=noninteractive \
-    apt-get -y install retroshare06-nogui \
+    apt-get -y install retroshare \
   && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 
-ENTRYPOINT [ "RetroShare06-nogui", "--stderr", "--ip-address", "0.0.0.0" ]
+ENTRYPOINT [ "retroshare-nogui", "--stderr", "--ip-address", "0.0.0.0" ]
