@@ -3,7 +3,8 @@ FROM pataquets/ubuntu:xenial
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN \
-  echo "deb http://ppa.launchpad.net/retroshare/stable/ubuntu xenial main" \
+  . /etc/lsb-release && \
+  echo "deb http://ppa.launchpad.net/retroshare/stable/ubuntu ${DISTRIB_CODENAME} main" \
     | tee /etc/apt/sources.list.d/retroshare.list && \
   apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv-keys 144729B5
 
